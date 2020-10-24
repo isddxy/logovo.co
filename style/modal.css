@@ -1,6 +1,21 @@
 * {
     box-sizing: border-box;
   }
+
+  .close-bg {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+  }
+
+  .close-bg.out {
+    transform: scale(1);
+    animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  .close-bg.out > .modal-background .modal {
+    animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
   
   html.modal-active,
   body.modal-active {
@@ -38,14 +53,16 @@
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
     vertical-align: middle;
+    z-index: 3;
   }
   #modal-container .modal-background .modal {
     background: white;
-    padding: 50px;
+    padding: 50px 20px;
     display: inline-block;
     border-radius: 3px;
     font-weight: 300;
     position: relative;
+    z-index: 100;
   }
   #modal-container .modal-background .modal h2 {
     font-size: 25px;
