@@ -21,3 +21,15 @@ $(".close-bg").click(function () {
   $("#modal-container2").addClass("out");
   $("body").removeClass("modal-active");
 });
+
+
+$(".button3").click(function () {
+  var buttonId = $(this).attr("id");
+  $("#modal-container3").removeAttr("class").addClass(buttonId);
+  $("body").addClass("modal-active");
+});
+
+$(".close-bg").click(function () {
+  $("#modal-container3").addClass("out");
+  $("body").removeClass("modal-active");
+});
